@@ -7,10 +7,18 @@ import mongoose from "mongoose";
 export async function connection()
 {
     try{
-        var connect=await mongoose.connect("mongodb://localhost:27017/blog_api", {
+        // var connect=await mongoose.connect("mongodb://localhost:27017/blog_api", {
+        //     useUnifiedTopology: true,
+        //     useNewUrlParser: true,
+        //     });
+
+        var connect = await mongoose.connect(
+          "mongodb+srv://Mkhan:mkhan@cluster0.uydprj9.mongodb.net/?retryWrites=true&w=majority",
+          {
             useUnifiedTopology: true,
             useNewUrlParser: true,
-            });
+          }
+        );
         console.log("connected db... ");
     }
     catch(err)
